@@ -1,0 +1,25 @@
+import random
+import numpy as np
+import pandas as pd
+from scipy.special import comb
+import scipy as sp
+from pylab import *
+import numpy as np
+from matplotlib import pyplot as plt
+import pandas as pd
+import seaborn as sns
+import collections
+# from IPython.display import clear_output
+# import random
+# sns.set_style("ticks")
+# Run profile: "current working directory" /opt/anaconda3/envs/ipykernel_py2 for python2
+# Run profile: "current working directory" /opt/anaconda3 for python3
+
+
+file_path = "/Users/mzhu/Documents/Python/2020_20_440/440_project/"
+Srinivasan_metadata = pd.read_excel(file_path+"pone.0037818.s006.xlsx")
+Srinivasan_16s = pd.read_excel(file_path+"pone.0037818.s007.xlsx")
+Srinivasan_taxa = pd.read_excel(file_path+"pone.0037818.s005.xlsx")
+Ravel_metadata = pd.read_excel(file_path+"st04.xlsx")
+
+print (Ravel_metadata)
