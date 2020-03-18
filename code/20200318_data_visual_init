@@ -1,3 +1,4 @@
+# BASIC IMPORTS
 import random
 import numpy as np
 import pandas as pd
@@ -12,14 +13,43 @@ import collections
 # from IPython.display import clear_output
 # import random
 # sns.set_style("ticks")
+
+# DIRECTIONS FOR PUSHING CODE TO GITHUB
 # Run profile: "current working directory" /opt/anaconda3/envs/ipykernel_py2 for python2
 # Run profile: "current working directory" /opt/anaconda3 for python3
+# git add .
+# git status
+# git commit -m "message"
+# git push -u origin master
 
 
-file_path = "/Users/mzhu/Documents/Python/2020_20_440/440_project/"
-Srinivasan_metadata = pd.read_excel(file_path+"pone.0037818.s006.xlsx")
-Srinivasan_16s = pd.read_excel(file_path+"pone.0037818.s007.xlsx")
-Srinivasan_taxa = pd.read_excel(file_path+"pone.0037818.s005.xlsx")
-Ravel_metadata = pd.read_excel(file_path+"st04.xlsx")
+file_path = "/Users/mzhu/Documents/Python/2020_20_440/440_project/data/raw/"
+file_output = "/Users/mzhu/Documents/Python/2020_20_440/440_project/data/processed/20200318_data_visual_init/"
+fig_output = "/Users/mzhu/Documents/Python/2020_20_440/440_project/fig/20200318_data_visual_init/"
 
-print (Ravel_metadata)
+# Reads in data from files for Srinivasan and Ravel studies
+Srinivasan_metadata = pd.read_excel(file_path+"pone.0037818.s006.xlsx",\
+                                    index_col=0)
+Srinivasan_16s = pd.read_excel(file_path+"pone.0037818.s007.xlsx",index_col=0)
+Srinivasan_taxa = pd.read_excel(file_path+"pone.0037818.s005.xlsx",index_col=0)
+Ravel_metadata = pd.read_excel(file_path+"st04.xlsx",index_col=0,skiprows=[0,1])
+
+# Saves ethnic group data from Ravel et al in separate df in data/processed
+Ravel_ethnicgroups = Ravel_metadata["Ethnic Groupa"]
+Ravel_ethnicgroups.to_csv(file_output+"Ravel_ethnicgroups.csv")
+
+# Plots histogram of ethnic groups represented in Ravel et al study
+plt.hist(Ravel_ethnicgroups)
+plt.ylabel("Frequency")
+plt.xlabel("Ethnic Groups")
+plt.title("Ravel et al. Dataset")
+plt.savefig(fig_output+"Ravel_ethnicgroups.png",dpi=300)
+plt.show()
+
+# Plots histogram of vaginal pH range of samples collected in Srinivasan et al study
+plt.hist(Srinivasan_metadata.pH)
+plt.ylabel("Frequency")
+plt.xlabel("vaginal pH")
+plt.title("Srinivasan et al. Dataset")
+plt.savefig(fig_output+"Srinivasan_pH.png",dpi=300)
+plt.show()
