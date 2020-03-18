@@ -11,11 +11,13 @@ To conduct This computational analysis, public datasets from Ravel et al and Sri
 
 ### References
 (1) 	Alcendor, D. J. Evaluation of Health Disparity in Bacterial Vaginosis and the Implications for HIV‐1 Acquisition in African American Women. Am. J. Reprod. Immunol. 2016, 76 (2), 99–107. https://doi.org/10.1111/aji.12497.
+
 (2) 	Srinivasan, S.; Hoffman, N. G.; Morgan, M. T.; Matsen, F. A.; Fiedler, T. L.; Hall, R. W.; Ross, F. J.; McCoy, C. O.; Bumgarner, R.; Marrazzo, J. M.; Fredricks, D. N. Bacterial Communities in Women with Bacterial Vaginosis: High Resolution Phylogenetic Analyses Reveal Relationships of Microbiota to Clinical Criteria. PLoS ONE 2012, 7 (6). https://doi.org/10.1371/journal.pone.0037818.
+
 (3) 	Ravel, J.; Gajer, P.; Abdo, Z.; Schneider, G. M.; Koenig, S. S. K.; McCulle, S. L.; Karlebach, S.; Gorle, R.; Russell, J.; Tacket, C. O.; Brotman, R. M.; Davis, C. C.; Ault, K.; Peralta, L.; Forney, L. J. Vaginal Microbiome of Reproductive-Age Women. Proc. Natl. Acad. Sci. 2011, 108 (Supplement 1), 4680–4687. https://doi.org/10.1073/pnas.1002611107.
 
 ## Folder Structure
-This repository contains this README.md file and the following folders: code, data, and fig. All python scripts for performing analyses on the data and generating figures can be found in the code folder. The data folder contains a raw and processed subfolder. All data used from the Ravel et al and Srinivasan et al studies can be found in the data/raw. All processed data files generate using any scripts can be found in data/processed/[date of analysis_foldername]. All figures generated fig/[date of analysis_foldername]. 
+This repository contains this README.md file and the following folders: code, data, and fig. All python scripts for performing analyses on the data and generating figures can be found in the code folder. The data folder contains a raw and processed subfolder. All data used from the Ravel et al and Srinivasan et al studies can be found in the data/raw. All processed data files generate using any scripts can be found in data/processed/[date of analysis_foldername]. All figures generated fig/[date of analysis_foldername].
 
 ## Installation
 To run "20200318_data_visual_init", please download this entire repository including all subfolders. This script runs on python 3 and requires python packages which can be found in the script under #BASIC IMPORTS. If not already, please install those packages using pip or conda install in your terminal. After downloading the repo and installing packages, the file_path and output file paths should be changed in the "20200318_data_visual_init.py" script. The file_path is the file path for reading in the raw data, and the output file paths are for where to save processed data and figures.
